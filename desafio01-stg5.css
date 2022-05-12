@@ -42,7 +42,7 @@ section {
     margin: auto;
 }
 
-aside {
+.right {
     margin: auto;
     display: grid;
     gap: 3.2rem;
@@ -51,8 +51,62 @@ aside {
     grid-template-areas:
                         "A B"
                         "C D" ;
-    
 }
+.card {
+    height: 15.2rem;
+    gap: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E1E1E6;
+    border-radius: 2.4rem;
+    cursor: pointer;
+}
+.card svg path{
+    fill:#323238;
+}
+
+.card.dark {
+    background-color: #323238;
+}
+
+.card.dark svg path{
+    fill: #C4C4CC;
+}
+
+.cardVolume {
+    -webkit-appearance: none;
+    width: 70%;
+}
+
+.cardVolume::-webkit-slider-runnable-track {
+    /* width: 50%; */
+    height: 0.4rem;
+    background: black;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.dark > .cardVolume::-webkit-slider-runnable-track{
+    background-color: #C4C4CC;
+}
+
+.cardVolume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: black;
+    margin-top: -0.5rem;
+}
+
+.dark > .cardVolume::-webkit-slider-thumb{
+    background: #C4C4CC;
+}
+
 .timer {
     font-family: var(--font-primary);
     font-size: clamp(6rem, 8rem + 10vw, 12.6rem);
@@ -72,9 +126,6 @@ button svg {
     height: clamp(2.4rem, 3.2rem + 20vw, 5.8rem);
 }
 
-aside svg {
-    cursor: pointer;
-}
 
 #controls {
     display: flex;
@@ -84,5 +135,22 @@ aside svg {
 
 .numberDarkMode{
     color: white;
+}
+
+button.numberDarkMode > svg > path {
     fill: white;
+}
+
+.card.clicked {
+    background-color: #02799D;
+}
+
+.card.clicked > svg > path{
+    fill: white;
+}
+.card.clicked > .cardVolume::-webkit-slider-runnable-track{
+    background-color: white;
+}
+.card.clicked > .cardVolume::-webkit-slider-thumb{
+    background: white;
 }
